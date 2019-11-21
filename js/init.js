@@ -20,6 +20,15 @@ getReadyMsg.src = "assets/sprites/message.png";
 const gameOverMsg = new Image();
 gameOverMsg.src = "assets/sprites/gameover.png";
 
+// GAME STATE
+const state = {
+    current : 0,
+    getReady : 0,
+    play : 1,
+    over : 2
+}
+
+
 // ---------------------- DRAW ON CANVAS ---------------------- //
 
 // BACKGROUND OBJECT
@@ -60,7 +69,9 @@ const getReady = {
     height : 252,
     
     draw: function(){
-        ctx.drawImage(getReadyMsg, this.x, this.y, this.width, this.height);
+        if(state.current == state.getReady){
+            ctx.drawImage(getReadyMsg, this.x, this.y, this.width, this.height);
+        }
     }
     
 }
@@ -74,7 +85,9 @@ const gameOver = {
     height : 252,
 
     draw: function(){
-        ctx.drawImage(gameOverMsg, this.x, this.y, this.width, this.height);   
-    }
+        if(state.current == state.over){
+            ctx.drawImage(gameOverMsg, this.x, this.y, this.width, this.height);   
     
+        }
+    }
 }

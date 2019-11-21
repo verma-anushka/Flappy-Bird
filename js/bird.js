@@ -24,7 +24,7 @@ const bird = {
     height : 26,
     frame : 0,
 
-    draw : function(){
+    draw: function(){
         if(this.frame == 0){
             ctx.drawImage(birdImages["yellowBirdUp"], this.x - this.width/2, this.y + this.height/2, this.width, this.height);
             // this.frame++;
@@ -37,6 +37,10 @@ const bird = {
             ctx.drawImage(birdImages["yellowBirdDown"], this.x - this.width/2, this.y + this.height/2, this.width, this.height);
             // this.frame++;
         }
+    },
+
+    flap: function(){
+        
     }
 
 }
