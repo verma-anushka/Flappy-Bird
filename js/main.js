@@ -6,8 +6,7 @@ cvs.addEventListener("click", function(evt){
     switch(state.current){
         case state.getReady: state.current = state.play;
                              break;
-        case state.play: 
-                        //  bird.flap();
+        case state.play: bird.flap();
                          break;
         case state.over: state.current = state.getReady;
                          break;
@@ -26,6 +25,8 @@ function draw(){
 
 // UPDATE
 function update(){
+    bird.update();
+    fg.update();
 }
 
 // GAME

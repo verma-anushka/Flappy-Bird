@@ -6,6 +6,7 @@ let ctx = cvs.getContext("2d"); // object
 
 // VARIABLES
 let frames = 0; // number of frames drawn
+const degree = Math.PI/180; // rotation
 
 // LOAD IMAGES
 const bgDay = new Image();
@@ -51,13 +52,23 @@ const fg = {
     
     x: 0,
     y: cvs.height - 142,
-    width: 264,
+    width: 258,
     height: 142,
-    
+
+    dx: 2, // for movement
+
     draw : function(){
         ctx.drawImage(base, this.x, this.y, this.width, this.height);
         ctx.drawImage(base, this.x, this.y, this.width + this.width, this.height);
+        ctx.drawImage(base, this.x, this.y, this.width + 2*this.width, this.height);
     },
+
+    update: function(){ 
+        if(state.current == state.play){ // move during play state
+            this.x = (this.x - this.dx) % (this.width/1.15);
+        }
+    }
+
 }
 
 // GET READY MESSAGE
