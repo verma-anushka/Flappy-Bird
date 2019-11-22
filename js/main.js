@@ -58,16 +58,20 @@ const score= {
 cvs.addEventListener("click", function(e){
 
     switch(state.current){
+        
         case state.getReady: state.current = state.play;
+                             sounds["swoosh"].play();
                              break;
-        case state.play: bird.flap();
+
+        case state.play: if(bird.y - bird.radius <= 0) 
+                            return;
+                         sounds["flap"].play();
+                         bird.flap();
                          break;
+                         
         case state.over: let rect = cvs.getBoundingClientRect();
                          let clickX = e.clientX - rect.left;
                          let clickY = e.clientY - rect.top;
-
-                        //  console.log(clickX);
-                        //  console.log(clickY);
                          if( clickX >= restartGameBtn.x 
                              && clickX <= restartGameBtn.x + restartGameBtn.width 
                              && clickY >= restartGameBtn.y 

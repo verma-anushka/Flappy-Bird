@@ -21,21 +21,34 @@ getReadyMsg.src = "assets/sprites/message.png";
 const gameOverMsg = new Image();
 gameOverMsg.src = "assets/sprites/gameover.png";
 
-// Medals
-const medalImages = [];
-const medalImageCollection = loadBirdImages(
+const medalImages = []; // Medals
+const medalImageCollection = loadMedalImages(
     ["bronzeMedal", "silverMedal", "goldMedal", "platinumMedal"],
     ["bronze", "silver", "gold", "platinum"]
 );
 
-function loadBirdImages(names, files) {
+function loadMedalImages(names, files) {
     for (let i = 0; i < names.length; i++) {
         const img = medalImages[names[i]] = new Image;
         img.src = "assets/sprites/" + files[i] + ".png";
     }   
 }
 
-console.log(medalImages);
+// LOAD SOUNDS
+const sounds = [];
+const soundsCollection = loadSounds(
+    ["flap", "hit", "swoosh", "point", "die"],
+    ["flap", "hit", "swoosh", "point", "die"],
+);
+
+function loadSounds(names, files) {
+    for (let i = 0; i < names.length; i++) {
+        const sound = sounds[names[i]] = new Audio();
+        sound.src = "assets/audio/" + files[i] + ".wav";
+    }   
+}
+console.log(sounds);
+
 // GAME STATE
 const state = {
     current : 0,

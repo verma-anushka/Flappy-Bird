@@ -54,6 +54,7 @@ const pipes = {
                 && bird.y - bird.radius < p.y + this.height // bird top < pipe bottom
             ){
                 state.current = state.over; // game over
+                sounds["hit"].play();
             }
             // Bottom Pipe
             if( bird.x + bird.radius > p.x // bird right > pipe left
@@ -62,12 +63,14 @@ const pipes = {
                 && bird.y - bird.radius < bottomPipeYPos + this.height // bird top < pipe bottom
             ){
                 state.current = state.over; // game over
+                sounds["hit"].play();
             }
             p.x -= this.dx; // shift pipes to the left
             
             if(p.x + this.width <= 0){ // pipe not visible
                 this.position.shift(); // remove pipe from array
                 score.current += 1; // update score
+                sounds["point"].play();
                 score.best = Math.max(score.current, score.best); // update high score
                 localStorage.setItem("best", score.best);
             }

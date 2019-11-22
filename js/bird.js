@@ -74,6 +74,7 @@ const bird = {
                 this.y = cvs.height - fg.height - this.height/2; // keep bird on ground
                 if(state.current == state.play){
                     state.current = state.over;
+                    sounds["die"].play();
                 }
             }
             
