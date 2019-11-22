@@ -1,4 +1,4 @@
-// ---------------------- BIRD CONTROL ---------------------- //
+// ---------------------- BIRD LOGIC ---------------------- //
 
 // LOAD BIRD IMAGES
 const birdImages = [];
@@ -26,7 +26,8 @@ const bird = {
     gravity : 0.25,
     jump : 4.6,
     rotation : 0,
-
+    radius : 12,
+    
     draw: function(){
 
         ctx.save();

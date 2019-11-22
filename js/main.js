@@ -18,6 +18,7 @@ cvs.addEventListener("click", function(evt){
 function draw(){
     bg.draw();
     fg.draw();
+    pipes.draw();
     bird.draw();
     getReady.draw();
     gameOver.draw();
@@ -27,6 +28,7 @@ function draw(){
 function update(){
     bird.update();
     fg.update();
+    pipes.update();
 }
 
 // GAME
