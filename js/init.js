@@ -47,7 +47,6 @@ function loadSounds(names, files) {
         sound.src = "assets/audio/" + files[i] + ".wav";
     }   
 }
-console.log(sounds);
 
 // GAME STATE
 const state = {

@@ -6,7 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Flappy Bird</title>
 
+    <!-- FAVICON -->
+    <link rel="shortcut icon" href="favicon.ico?" type="image/x-icon">
+    <link rel="icon" href="favicon.ico?" type="image/x-icon">
+
+    <!-- STYLES -->
     <style>
+        html{
+            width: 100%;
+            height: 100%;
+        }
+        body{
+            background: url('./assets/sprites/bg.jpg') no-repeat center center fixed;
+        }
         canvas{
             border: 5px solid #222;
             display: block;
@@ -14,10 +26,11 @@
         }
     </style>
 
-
 </head>
 <body>
     <canvas id="myCanvas" width="520" height="630"></canvas>
+
+    <!-- JS FILES -->
     <script src="./js/init.js"></script>
     <script src="./js/bird.js"></script>
     <script src="./js/pipes.js"></script>
