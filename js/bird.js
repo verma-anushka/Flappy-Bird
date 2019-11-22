@@ -27,7 +27,7 @@ const bird = {
     jump : 4.6,
     rotation : 0,
     radius : 12,
-    
+
     draw: function(){
 
         ctx.save();
@@ -51,10 +51,6 @@ const bird = {
 
     },
 
-    flap: function(){
-        this.speed = -this.jump;
-    },
-    
     update: function(){
        
         if(state.current == state.getReady) // flap speed
@@ -89,6 +85,15 @@ const bird = {
             }
         }
         
+    },
+
+    flap: function(){
+        this.speed = -this.jump;
+    },
+    
+    speedReset : function(){
+        this.speed = 0;
     }
 
 }
+

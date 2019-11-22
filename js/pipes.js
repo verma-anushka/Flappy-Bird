@@ -10,7 +10,7 @@ bottomPipe.src = "assets/sprites/bottom-pipe-green.png";
 // PIPES OBJECT
 const pipes = {
     
-    gap : 90,
+    gap : 120,
     maxYPos : -150,
     width : 53,
     height : 400,
@@ -35,9 +35,9 @@ const pipes = {
         if(state.current !== state.play) // if not playing, exit
             return;
         
-        if(frames%100 == 0){ // add pipes to array
+        if(frames % 150 == 0){ // add pipes to array
             this.position.push({
-                x : cvs.width,
+                x : cvs.width + 100,
                 y : this.maxYPos * ( Math.random() + 1)
             });
         }
@@ -65,10 +65,17 @@ const pipes = {
             }
             p.x -= this.dx; // shift pipes to the left
             
-            if(p.x + this.w <= 0){ // remove pipe from array
-                this.position.shift();
+            if(p.x + this.width <= 0){ // pipe not visible
+                this.position.shift(); // remove pipe from array
+                score.current += 1; // update score
+                score.best = Math.max(score.current, score.best); // update high score
+                localStorage.setItem("best", score.best);
             }
         }
+    },
+
+    reset : function(){
+        this.position = [];
     }
     
 }
