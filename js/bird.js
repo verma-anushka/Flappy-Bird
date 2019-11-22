@@ -4,7 +4,7 @@
 const birdImages = [];
 const birdImageCollection = loadBirdImages(
     ["yellowBirdUp", "yellowBirdMid", "yellowBirdDown"],
-    ["yellowbird-upflap", "yellowbird-midflap", "yellowbird-downflap"],
+    ["yellowbird-upflap", "yellowbird-midflap", "yellowbird-downflap"]
 );
 
 function loadBirdImages(names, files) {

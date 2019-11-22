@@ -3,6 +3,11 @@
 // SCORE
 const score= {
 
+    medalX: 154,
+    medalY: 237,
+    medalWidth: 54,
+    medalHeight: 52,
+
     best : parseInt(localStorage.getItem("best")) || 0,
     current : 0,
     
@@ -29,6 +34,17 @@ const score= {
             // Display best score
             ctx.fillText(this.best, 338, 295);
             ctx.strokeText(this.best, 338, 295);
+
+
+            if(this.current >= 40){
+                ctx.drawImage(medalImages["platinumMedal"], this.medalX, this.medalY, this.medalWidth, this.medalHeight);
+            } else if(this.current >= 30){
+                ctx.drawImage(medalImages["goldMedal"], this.medalX, this.medalY, this.medalWidth, this.medalHeight);
+            } else if(this.current >= 20){
+                ctx.drawImage(medalImages["silverMedal"], this.medalX, this.medalY, this.medalWidth, this.medalHeight);
+            } else if(this.current >= 10){
+                ctx.drawImage(medalImages["bronzeMedal"], this.medalX, this.medalY, this.medalWidth, this.medalHeight);
+            } 
         }
     },
 
@@ -36,15 +52,6 @@ const score= {
         this.current = 0;
     }
 
-}
-
-// RESTART GAME OBJECT
-const restartGameBtn = {
-
-    x : 221,
-    y : 332,
-    width : 84,
-    height : 26
 }
 
 // ON CLICK EVENT
@@ -59,6 +66,8 @@ cvs.addEventListener("click", function(e){
                          let clickX = e.clientX - rect.left;
                          let clickY = e.clientY - rect.top;
 
+                        //  console.log(clickX);
+                        //  console.log(clickY);
                          if( clickX >= restartGameBtn.x 
                              && clickX <= restartGameBtn.x + restartGameBtn.width 
                              && clickY >= restartGameBtn.y 

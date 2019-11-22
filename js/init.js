@@ -21,6 +21,21 @@ getReadyMsg.src = "assets/sprites/message.png";
 const gameOverMsg = new Image();
 gameOverMsg.src = "assets/sprites/gameover.png";
 
+// Medals
+const medalImages = [];
+const medalImageCollection = loadBirdImages(
+    ["bronzeMedal", "silverMedal", "goldMedal", "platinumMedal"],
+    ["bronze", "silver", "gold", "platinum"]
+);
+
+function loadBirdImages(names, files) {
+    for (let i = 0; i < names.length; i++) {
+        const img = medalImages[names[i]] = new Image;
+        img.src = "assets/sprites/" + files[i] + ".png";
+    }   
+}
+
+console.log(medalImages);
 // GAME STATE
 const state = {
     current : 0,
@@ -29,6 +44,14 @@ const state = {
     over : 2
 }
 
+// RESTART GAME OBJECT
+const restartGameBtn = {
+
+    x : 221,
+    y : 332,
+    width : 84,
+    height : 26
+}
 
 // ---------------------- DRAW ON CANVAS ---------------------- //
 
