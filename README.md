@@ -58,7 +58,7 @@ To start playing:
 
 
 ## Game Snapshot :camera:
-![Flappy Bird](/images/flappyBird1.png)
+![Flappy Bird](/flappyBird1.png)
 
 
 ## CONTRIBUTE :shipit:
