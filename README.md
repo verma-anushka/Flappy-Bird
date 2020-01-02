@@ -57,8 +57,9 @@ To start playing:
         - canvas.getContext() — context is our toolbox of paintbrushes and shapes. The 2D context contains the set of tools we want. If         you were working with 3D, you would use WebGL instead.
 
 
-## Game Snapshot :camera:
+## SNAPSHOTS :camera:
 ![Flappy Bird](/flappyBird1.png)
+![Flappy Bird](/flappyBird2.png)
 
 
 ## CONTRIBUTE :shipit:
